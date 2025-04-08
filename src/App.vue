@@ -53,12 +53,13 @@ const somaMaiorQue10 = computed(() => soma.value > 10);
 </template>
 
 <style scoped>
-.div {
+.div.contadores {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
   color: rgb(27, 25, 25);
   font-weight: bold;
+  background-color: white;
 }
 .button {
   margin: 10px;
