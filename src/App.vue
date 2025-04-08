@@ -60,7 +60,7 @@ const somaMaiorQue10 = computed(() => soma.value > 10);
   color: rgb(27, 25, 25);
   font-weight: bold;
 }
-button {
+.button {
   margin: 10px;
   padding: 10px;
   border: 0;
@@ -70,7 +70,7 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
-button:hover {
+.button:hover {
   background-color: azure;
 }
 </style>
