@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 
 const contador1 = ref(0);
 const contador2 = ref(0);
+const valorBooleano = ref(true);
 
 function incrementar1() {
   contador1.value++;
@@ -23,8 +24,16 @@ const somaMaiorQue10 = computed(() => soma.value > 10);
 </script>
 
 <template>
+   <h1>Exercício Propriedades Computadas</h1>
+  <div class="booleano">
+    <button @click="valorBooleano = !valorBooleano">
+       {{ valorBooleano ? 'Esconder Resultado' : 'Mostrar Resultado' }}
+      
+    </button>
+  </div>
+  <div v-if="valorBooleano">
   <div class="contadores">
-    <h1>contador 1</h1>
+    <h2>contador 1</h2>
     <p>Valor: {{ contador1 }} </p>
     <button @click="incrementar1">+</button>
     <button @click="decrementar1">-</button>
@@ -50,18 +59,28 @@ const somaMaiorQue10 = computed(() => soma.value > 10);
       <p>A soma é ímpar</p>
     </div>
   </div>
+</div>
 </template>
 
 <style scoped>
-.div.contadores {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  color: rgb(27, 25, 25);
-  font-weight: bold;
+.contadores {
+  padding: 20px 30px;
   background-color: white;
+  color: rgb(10, 10, 10);
+  border-radius: 10px;
+  text-align: center;
+  margin: 30px;
 }
-.button {
+
+h1{
+  color: rgb(12, 139, 0);
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 10px;
+  text-align: center;
+}
+
+button {
   margin: 10px;
   padding: 10px;
   border: 0;
@@ -71,7 +90,24 @@ const somaMaiorQue10 = computed(() => soma.value > 10);
   font-weight: bold;
   cursor: pointer;
 }
-.button:hover {
-  background-color: azure;
+
+button:hover {
+  background-color: rgb(0, 255, 26);
+}
+
+div {
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(27, 25, 25);
+  font-weight: bold;
+}
+.booleano {
+  text-align: center;
+}
+.soma {
+  text-align: center;
+  background-color: white;
+  padding: 20px 30px;
+  margin: 30px
 }
 </style>
